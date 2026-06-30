@@ -1,0 +1,162 @@
+\documentclass[number,nopreprintline]{elsarticle}
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgf-pie}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{enumitem} 
+\usepackage{array}    
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+\usepackage{acro}
+\usepackage{hyperref}
+\hypersetup{
+  hidelinks,
+  pdftitle={From Waves to Words: A Neuro-Symbolic Approach to Personalized Health AI Agent},
+  pdfauthor={Ikramullah Khan; Jaime A. Martins; Pedro J. S. Cardoso},
+  pdfkeywords={MCP architecture, MCP tool boundary, physiological analytics orchestration, local LLM orchestration, physiological time series, on-premises analytics}
+}
+\pdfstringdefDisableCommands{%
+  \def\corref#1{}%
+  \def\cnotenum#1{}%
+}
+\usepackage{tcolorbox}
+\usepackage{capt-of}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{subcaption}
+\usepackage{placeins}
+
+\usetikzlibrary{shapes, arrows, positioning, arrows.meta, calc, backgrounds, shadows}
+\pgfplotsset{compat=1.18}
+
+% Define project colors
+\definecolor{mcpcolor}{RGB}{41,128,185}
+\definecolor{damcolor}{RGB}{46,204,113}
+\definecolor{ramcolor}{RGB}{231,76,60}
+\definecolor{agmcolor}{RGB}{241,196,15}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\acsetup{
+  single = true,
+  make-links = false,
+}
+
+\newtcolorbox{architecturebox}{
+  colback=mcpcolor!5!white,
+  colframe=mcpcolor!75!black,
+  fontupper=\small,
+  sharp corners,
+  boxrule=0.5pt,
+  left=5pt,
+  right=5pt,
+  top=5pt,
+  bottom=5pt
+}
+
+\newtcolorbox{definitionbox}{
+  colback=gray!5!white,
+  colframe=gray!75!black,
+  fontupper=\small,
+  sharp corners,
+  boxrule=0.5pt,
+  left=5pt,
+  right=5pt,
+  top=5pt,
+  bottom=5pt
+}
+
+\newtcolorbox{searchquery}{
+  colback=blue!5!white,
+  colframe=blue!75!black,
+  fontupper=\small\ttfamily,
+  sharp corners,
+  boxrule=0.5pt,
+  left=5pt,
+  right=5pt,
+  top=5pt,
+  bottom=5pt
+}
+
+\input{sections/acronyms}
+
+\begin{document}
+
+\begin{frontmatter}
+
+  \title{From Waves to Words: A Neuro-Symbolic Approach to Personalized Health Monitoring}
+
+  \author[nova,ise]{Ikramullah Khan\corref{cor1}}
+  \ead{a92278@ualg.pt}
+
+  \author[ise,ceot]{Jaime A. Martins}
+  \ead{jamartins@ualg.pt}
+
+  \author[nova,ise]{Pedro J. S. Cardoso}
+  \ead{pcardoso@ualg.pt}
+
+  \cortext[cor1]{Corresponding author}
+  \address[nova]{NOVA LINCS, Universidade do Algarve, 8005--139 Faro, Portugal}
+  \address[ise]{ISE, Universidade do Algarve, 8005--139 Faro, Portugal}
+  \address[ceot]{CEOT, Universidade do Algarve, 8005--139 Faro, Portugal}
+
+  \begin{abstract}
+    The basic idea is that the large language models are unable to inerpret the physiological time series data directly. and it is also a difficult task for a human to interpret this. The Vitals ai agent can ingest, compiles and convert the raw physiological time series data into a structured format that is helpful for large language models as well as the human medical practitioner.
+    we have implemented human activity recognition and stress prediction in the vitals ai agent. 
+    details about har
+    details about stress prediction
+    details about the architecture of the vitals ai agent
+    evaluation of the vitals ai agent
+    evaluations steps
+    results of the evaluation
+    discussion of the results
+    conclusion and future work.
+    Abstract here \cite{cite_needed}.
+  \end{abstract}
+
+  \begin{keyword}
+    
+  \end{keyword}
+
+\end{frontmatter}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/experiment}
+\input{sections/methodology}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/conclusion}
+
+%\printacronyms[heading=section, name=List of Abbreviations]
+
+\section*{Declarations}
+\noindent\textbf{Acknowledgements.} The authors acknowledge support from NOVA LINCS and the Universidade do Algarve.
+
+\noindent\textbf{Funding.} This work was supported by NOVA LINCS (UID/04516/2025), with financial support from Funda\c{c}\~ao para a Ci\^encia e a Tecnologia, I.P. (FCT), DOI: \href{https://doi.org/10.54499/UID/04516/2025}{10.54499/UID/04516/2025}.
+
+\noindent\textbf{Ethics.} No new clinical deployment or primary human-subject data collection was conducted. The reported runtime instantiation uses secondary human research datasets under the original providers' access terms and should be interpreted as a non-clinical pre-deployment architecture study.
+
+\noindent\textbf{Competing interests.} The authors declare no competing interests.
+
+\noindent\textbf{AI assistance.} OpenAI Codex (GPT-5.5-xhigh) was used during manuscript revision to assist with LaTeX editing and wording audits. AI-assisted tools were not used to select, screen, or code the literature corpus. The authors reviewed and edited the AI-assisted outputs and take full responsibility for the content of this publication.
+
+\noindent\textbf{Author contributions.} Ikramullah Khan: Conceptualization, Methodology, Investigation, Data curation, Formal analysis, Visualization, Writing: original draft. Jaime A. Martins: Conceptualization, Methodology, paper consistency review, Supervision, Writing: review \& editing. Pedro J. S. Cardoso: Conceptualization, Methodology, paper consistency review, Supervision, Funding acquisition, Project administration, Writing: review \& editing.
+
+\noindent\textbf{Data availability.} No new clinical or primary human-subject datasets were generated. Capture24 and WESAD are secondary human research datasets available subject to the original dataset providers' access terms. The repository contains the LaTeX source, root \texttt{main.pdf}, and an artifact-status manifest; executable runtime artifacts are not included in this paper-source repository and are reserved for a separate artifact package.
+	
+
+
+\bibliographystyle{elsarticle-num-names}
+\setlength{\bibsep}{1pt}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,62 @@
+## LaTeX
+build/
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.synctex(busy)
+*.synctex
+*.toc
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.nav
+*.run.xml
+*.snm
+*.vrb
+*.bcf
+*.xdv
+
+## Backup files
+*~
+*.bak
+*.swp
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## IDE/Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+## Python (if any scripts are added)
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints
+*$py.class
+
+## Specific to this repo if needed
+texput.log
+x.log
+main.aux
+main.bbl
+main.blg
+main.fdb_latexmk
+main.fls
+main.log
+main.out
+main.synctex.gz
+main.spl
+
+## Runtime artifacts kept out of the manuscript repository
+logs/
